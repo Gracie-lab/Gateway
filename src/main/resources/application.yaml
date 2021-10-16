@@ -1,0 +1,27 @@
+server:
+  port: 8080
+
+spring:
+  cloud:
+    gateway:
+      default-filters:
+        - name: EncryptDecryptFilter
+
+      routes:
+        - id: product_service_v1
+          uri: http://localhost:8082/
+          predicates:
+            - Path=/product/**
+            - Path=/product/version/**
+            - Query=src,mobile
+        - id: product_service_v2
+          uri: http://localhost:8087/
+          predicates:
+            - Path=/product/version/**
+#            - Path=/product/version/call
+#
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: gateway,metrics

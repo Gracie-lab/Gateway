@@ -1,0 +1,13 @@
+{
+  "properties": [
+    {
+      "name": "spring.cloud.gateway.filter",
+      "type": "java.lang.String",
+      "description": "Description for spring.cloud.gateway.filter."
+    },
+    {
+      "name": "spring.cloud.gateway.default-filter",
+      "type": "java.lang.String",
+      "description": "Description for spring.cloud.gateway.default-filter."
+    }
+  ] }
